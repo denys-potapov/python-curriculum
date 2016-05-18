@@ -1,153 +1,167 @@
 ---
 title: Quiz
 level: Python 1
-language: en
+language: uk-UA
 stylesheet: python
 embeds: "*.png"
 materials: ["Project Resources/Quiz.py"]
 ...
 
-# Introduction:  { .intro}
+# Вступ: {.intro}
 
-In this project, you'll make a quiz game to challenge your friends.
+У цьому проекті, ти зробиш вікторини, щоб змагатися зі своїми друзями.
 
-# Step 1: Asking a question { .activity}
+# Крок 1: Ставлячи питання {.activity}
 
-## Activity Checklist { .check}
+## Контроль активності { .check}
 
-+ Let's start by writing a very simple quiz program that asks the player a question, then shows them smiley faces if they input the correct answer.
++ Давайте почнемо з написання дуже простої вікторини, яка задає гравцеві питання, а потім показує їм смайлики, якщо вони ввели правильну відповідь.
 
 	```python
-	print("In Python, what do you call a 'box' used to store data?")
+	print("Як в Python називається комірка, що використовують для зберігання данних?")
 	answer = input()
 
-	if answer == "variable":
+	if answer == "змінна":
 		print(" :) " * 100)
 
-	print("Thank you for playing!")
+	print("Дякую за гру!")
 	```
 
-	Take care to add the colon (`:`) to the end of the line `if answer == "variable":`, and indent the line below it (move it to the right) with spaces.
+	Не забудьте двокрапку ( `:`) в кінці рядка `if answer == "variable":`. І вирівняти рядок нижче(перемістити його вправо) за допомогою пробілів.
 
-+ Once you've written the program above, try it out! What happens when you get the answer right? What happens when you get it wrong?
++ Після того, як ви написали програму вище, спробуйте! Що відбувається, коли ви даєте правильну відповідь? Що відбувається, коли ви робите помилку?
 
 	![screenshot](quiz-if.png)
 
-	The indented code (that prints the smiley faces) only runs *if* the answer is correct. But "Thank you for playing!" always appears, whether your answer is right or wrong. Why is that?
+	Код з відступомс (який друкує смайлики) працює тільки, якщо *if* відповідь правильна. Але "Дякую за гру!" з'являється завжди, чи ваша відповідь є правильним чи неправильним. Чому це так?
 
-	Python uses two equals signs `==` to check if two things are the same. This is because one equals sign `=` is used to store something in a variable (for example `answer = input()`).
+	Python використовує два знака рівності `==`, щоб перевірити, що дві речі однакові. Це тому, що один знак рівності `=` використовується для зберігання чогось в змінній (наприклад, `answer = input()`).
 
-+ The program above prints smiley faces if the player gets the question right, but doesn't print anything to tell them they got the answer wrong. You can use an `else` statement to print sad faces if the user inputs anything other than the correct answer.
+
++ Програма вище друкує смайлики, якщо гравець дає правильну відповідь, але нічого не каже, якщо вони помилилися. Ви можете використовувати `else` для друку сумних обличчь, якщо користувач вводить щось інше, крім правильної відповіді.
 
 	```python
-	print("In Python, what do you call a 'box' used to store data?")
+	print("Як в Python називається комірка, що використовують для зберігання данних?")
 	answer = input()
 
-	if answer == "variable":
+	if answer == "змінна":
 		print(" :) " * 100)
 	else:
 		print(" :( " * 100)
 
-	print("Thank you for playing!")
+	print("Дякую за гру!")
 	```
 
-	Try out this new program. What happens when you enter the right answer? What happens when you enter anything else?
+	Спробуйте цю нову програму. Що відбувається, коли ви вводите правильну відповідь? Що відбувається, коли ви вводите що-небудь ще?
 
 	![screenshot](quiz-if-else.png)
 
-## Save Your Project {.save}
+## Збережи проект {.save}
 
-## Challenge: Question time { .challenge}
+## Завдання: Час питаннь {.challenge}
 
 Use what you've learnt so far to create your own quiz. You can choose any topic you like, and your quiz should use `if` and `else` statements to let the player know how they're doing.
 
-## Save Your Project {.save}
+Використовуйте те, що ви дізналися досі, щоб створити свою власну вікторину. Ви можете вибрати будь-яку тему, яку ви любите, і ваш тест повинен використовувати `if` і `else`, щоб дозволити гравцеві знати, що вони роблять.
 
-# Step 2: Testing { .activity}
+## Збережи проект {.save}
 
-It's always a good idea to test your programs, to make sure that they work properly.
+# Крок 2: Тестування {.activity}
 
-## Activity Checklist { .check}
+Це завжди гарна ідея перевірити свої програми, щоб переконатися, що вони працюють належним чином.
 
-+ If you've tested your quiz, you may have noticed it's possible to get sad faces even when you input a correct answer! Like in this example, where the player has accidently presSED CAPS LOCK!
+## Контроль активності { .check}
+
++ Якщо ви тестували свою вікторину, ви, можливо, помітили, що можна отримати сумні обличчя навіть тоді, коли ви вводите правильну відповідь! Як і в цьому прикладі, де гравець випадково натиснувCAPS LOCK!
 
 	![screenshot](quiz-test.png)
 
 	This happens because Python is very strict when it compares the player's answer to the correct answer. To Python, "V" isn't the same as "v", and so if the player uses any capital letters in their answer, Python thinks the answer's wrong!
+	
+	Це відбувається тому, що Python є дуже строгим, коли він порівнює відповідь гравця з  правильною відповіддю. Для Python, "V" не те ж саме, що "v", і тому, якщо гравець використовує будь-які великі літери в своїй відповіді, Python думає, що відповідь не вірна!
 
-	Test this out in your game, to see if the same thing happens.
+	Перевірте це у вашій грі, щоб побачити, що теж саме відбувається.
 
-+ To fix the problem, you need to convert the player's input to lower case, so there are no capital letters in their answer. We can make sure this works by printing the modified answer. Make this change where the player inputs their answer:
++ Щоб усунути цю проблему, необхідно перетворити відповідь гравця в нижній регістр, аби небуло ніяких великих літер в їх відповіді. Ми можемо переконатися, що це працює, надрукувавши модифіковану відповідь. Заміни код, де гравець вводить свою відповідь:
 
 	```python
 	answer = input().lower()
 	print(answer)
 	```
 
-+ Now test your quiz again. Have you fixed the problem? Try testing these examples:
++ Тепер перевірте вашу вікторину ще раз. Ви виправили проблему? Спробуйте протестувати ці приклади:
 
 	![screenshot](quiz-test-lower.png)
 
-## Save Your Project {.save}
+## Збережи проект {.save}
 
-# Step 3: Multiple choice { .activity}
+# Крок 3: Множинний вибір {.activity}
 
-## Activity Checklist { .check}
+## Контроль активності { .check}
 
-+ So far you've used `if` and `else` to let the player know if they got the answer right or wrong. But what if you wanted a multiple choice question, where the user could see one of 4 messages? You can use an `elif` statement to do this.
++ До сих пір ви використовували `if` і `else`, щоб дозволити гравцеві знати, якщо він дав правильну відповідь або неправильно. Але що, якщо ви хочете кілька варіантів відповіді, в якому користувач може побачити один з 4-х варіантів відповіді? Ви можете використовувати `elif`, щоб зробити це.
 
 	```python
+	print("")
+	answer = input()
+
 	print('''
-	Q1 - In Python, what do you call a 'box' used to store data?
-	a - text
-	b - variable
-	c - a shoe box
+	П1 - Як в Python називається комірка, що використовують для зберігання данних?
+	а - текст
+	б - змінна
+	в - коробка для взуття
 	''')
 	answer = input().lower()
 
-	if answer == "a":
-		print(" Nope - text is a type of data :( ")
-	elif answer == "b":
-		print(" Correct!! :) ")
-	elif answer == "c":
-		print(" Don't be silly! :( ")
+	if answer == "а":
+		print(" Ні, текст - це тип данних :( ")
+	elif answer == "б":
+		print(" Вірно!! :) ")
+	elif answer == "в":
+		print(" Не клей дурня! :( ")
 	else:
-		print(" You didn't choose a, b or c :( ")
+		print(" Ти не видбрав а, б чи в :( ")
 	```
 
-	`elif` is short for "else if". So in the program above, the player sees one of 4 messages, depending on what they entered for their answer.
+	 is short for "else if". So in the program above, the player sees one of 4 messages, depending on what they entered for their answer.
 
-+ Add the code above to your quiz, so that you have a multiple choice question.
+	`elif` це скорочення від "else if". Таким чином, у наведеній вище програмі, гравець бачить одне з 4 повідомлень, в залежності від того, що вони ввели у відповідь.
 
-+ Test this new question 4 times, so that you see each of the 4 messages.
++ Додати код вище до вашої вікторини, так що у вас буде кілька питання вибору.
+
++ Перевірте нове питання 4 рази, так що ви бачите кожне з 4 повідомлень.
 
 	![screenshot](quiz-elif.png)
 
-## Save Your Project {.save}
+## Збережи проект {.save}
 
-## Challenge: Multiple choice quiz  { .challenge}
+## Завдання: Множинний вибір вікторини {.challenge}
 
 Add a few multiple choice questions to your quiz program. Once you have finished making your quiz, get someone else to play it! How did they do? Did they enjoy it? Was it too easy or too hard?
 
-## Save Your Project {.save}
 
-## Challenge: Keeping score  { .challenge}
+Додайте кілька питань з множинного вибору для вашої вікторини. Після того, як ви закінчили робити, попросіть кого-небудь, щоб  пограв! Як вони це робили? Можливо, їм це подобається? Це було занадто легко або дуже складно?
 
-Can you use a `score` variable in your quiz program, to keep track of the player's score? This is how the variable could be used:
+## Збережи проект {.save}
 
-+ At the start of the program, set the score to 0.
-+ Whenever a question is answered correctly, add 1 to the player's score. (`score = score + 1`)
-+ Print the player's score at the end of the quiz.
+## Завдання: Збереження оцінки {.challenge}
 
-## Save Your Project {.save}
+Ви можете використовувати змінну `score` в вашій програмі, щоб стежити за рахунок гравця? Як можна було б використовувати змінну:
 
-## Challenge: How did I do?  { .challenge}
++ На початку програми, встановіть `score` в 0.
++ Щоразу, коли гравець правильно відповів, додайте 1 до рахунку гравця. ( `score = score + 1`)
++ Надрукуйте рахунок гравця в кінці вікторини.
 
-Can you print a personalised message to the player at the end of the game?
+## Збережи проект {.save}
+
+## Завдання: Як я пройшов? {.challenge}
+
+Чи можете ви надрукувати персоналізовані повідомлення для гравця в кінці гри?
 
 + Say "well done" `if` they got all of the questions right.
-+ `else` say "try again" if they got any wrong.
++ Скажи "молодець" `if` вони відповіли правильно на всі питання.
++ скажи "спробуйте ще раз", якщо вони помилилися.
 
-(You'll need to use your `score` variable to decide which message to print!)
+(Ви повинні будете використовувати змінну `score`, щоб вирішити, яке повідомлення друкувати!)
 
-## Save Your Project {.save}
+## Збережи проект {.save}
